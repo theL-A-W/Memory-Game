@@ -1,0 +1,87 @@
+*{
+    margin: auto;
+
+}
+h1{
+    color: white;
+    text-align: center;
+    margin: 1em;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 60px;
+    background-color: white;
+    background-image: url("https://t3.ftcdn.net/jpg/05/11/25/36/240_F_511253627_zuzpapnIVQueMx4eSL1ilAoH61OBgj0C.jpg");
+    border: 4px solid white;
+    box-shadow: 0 5px 5px thistle;
+    border-radius: 10px;
+}
+body{
+    background-color:rgb(234, 189, 105);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#easy{
+    color:rgb(185, 161, 130);
+    height: 40px;
+    width: 30%;
+    margin-right: 10px;
+    border: 4px solid white;
+}
+#easy:hover{
+    width: 100%;
+    background-image: url("https://t4.ftcdn.net/jpg/03/51/50/89/360_F_351508999_67wHC4cpdrYwh7LvR848R13xTZITW2OT.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#hard{
+    color:rgb(185, 161, 130);
+    height: 40px;
+    width: 30%;
+    margin-left: 10px;
+    border: 4px solid white;
+}
+#hard:hover{
+    width: 100%;
+    background-image: url("https://t4.ftcdn.net/jpg/03/51/50/89/360_F_351508999_67wHC4cpdrYwh7LvR848R13xTZITW2OT.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#levelBtns {
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+#timer{
+    height:40px;
+    width: 400px;
+    text-align: center;
+    color:rgb(185, 161, 130);
+    border: 4px solid white;
+    border-radius: 5px;
+    margin-top: 4em;
+    margin-bottom: 4em;
+    background-image: url("");
+    background-color: white;
+    
+}
+.box {
+    height: 110px;
+    width: 110px;
+    border: 4px solid rgb(198, 169, 198);
+    border-radius: 5px;
+    background-color: thistle;
+    color:rgb(185, 161, 130);
+    text-align: center;
+    box-shadow: 0 5px 10px rgb(141, 100, 141);
+}
+.grid-container{
+    margin:30px;
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 15px;
+    padding: 1em;
+}
