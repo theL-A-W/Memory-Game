@@ -28,7 +28,7 @@
 
 
 
-
+let matchedCount = 0
 
     const imageArray = [
         `https://media.istockphoto.com/id/1392163011/photo/cute-female-kitten-walking-towards-and-looking-in-the-camera-on-a-pink-background.webp?b=1&s=170667a&w=0&k=20&c=YA2ZIsdH9Qpah-nmbhOvsz9DP8pLJIJ19FUaYAPolM0=`,
@@ -64,6 +64,11 @@ let hasFlippedCard = false
 
 
 
+function displayPopup() {
+    const popup =  document.querySelector('.popup')
+    popup.style.display = 'block'
+}
+
 
 function flipCard(index) {
   if (lockBoard) return
@@ -87,27 +92,33 @@ function flipCard(index) {
     const secondCardURL = imageArray[secondCard]
 
     if (firstCardURL === secondCardURL){
+        matchedCount += 2
         resetCards()
-} else {
-    setTimeout(() => {
-        cards[firstCard].style.backgroundImage = 'url("")'
-        cards[secondCard].style.backgroundImage = 'url("")'
-        isFlipped[firstCard] = false
-        isFlipped[secondCard] = false
-        resetCards()
-    }, 1000)
-}
-function resetCards(){
-    hasFlippedCard = false
-    lockBoard = false
-    firstCard = null
-    secondCard = null
-}
+//////  TO DISPLAY POP-UP   ///////
+    if (matchedCount === imageArray.length) {
+    displayPopup()
+    
+    }
+    } else {
+        setTimeout(() => {
+            cards[firstCard].style.backgroundImage = 'url("")'
+            cards[secondCard].style.backgroundImage = 'url("")'
+            isFlipped[firstCard] = false
+            isFlipped[secondCard] = false
+            resetCards()
+        }, 1000)
+    }
+    function resetCards(){
+        hasFlippedCard = false
+        lockBoard = false
+        firstCard = null
+        secondCard = null
+    }
 
-  secondCard = index
-  lockBoard = true
-  match()
-}
+    secondCard = index
+    lockBoard = true
+    match()
+    }
 
 
 //shuffles the array so the images are in a different order each time, ie. on different cards
@@ -127,12 +138,6 @@ function resetCards(){
 
 
 
-
-
-
-
-
-
 //Timer functionality
     function startTimer(duration, display) {
         let timer = duration, minutes, seconds
@@ -145,7 +150,7 @@ function resetCards(){
 
 //displaying how the time will be shown
             display.textContent = minutes +  ":" + seconds
-
+            
 // itinializing a stop of the timer once it reaches 0
     if (timer <= 0) {
         clearInterval(intervalId)
@@ -160,29 +165,63 @@ function resetCards(){
     function stopTimer () {
         clearInterval(intervalId)
     }
+
+
+
+    //////     IF HARD BUTTON IS PRESSED     //////////////
 //this starts a 1 minute(60 seconds) timer when the window loads aka when you press refresh
-//hardButton = document.getElementById('hard')
-//hard.onload = function (){...
-// ^^ above 2 lines start the timer when "hard button is pressed, but the seconds don't count down properly"
-        window.onload = function () {
-            // const twoMinutes = 120, 
-            const oneMinute = 60,
-            display = document.getElementById('timer')
-            startTimer(oneMinute, display)
+    hardButton = document.getElementById('hard')
+    hardButton.onclick = function (){
+    resetGame()
+    const twoMinutes = 20, 
+    display = document.getElementById('timer')
+    startTimer(twoMinutes, display)
+}
+//This will only restart the cards not the full window, so the timer will start counting down too
+    function resetGame(){
+        for(let i=0; i<cards.length;i++){
+            cards[i].style.backgroundImage = 'url("")'
+            isFlipped[i] = false
         }
+    }
+////BELOW WILL LOAD TIMER WHEN THE WINDOW LOADS
+//         window.onload = function () {
+//             const twoMinutes = 120, 
+//             display = document.getElementById('timer')
+//             startTimer(twoMinutes, display)
+//         }
 
-// ^^ I want to add an "if" statement to this to start the timer only when the "hard" button is pressed
-
-
-
-
-
-
-
-
-
+// // ^^ I want to add an "if" statement to this to start the timer only when the "hard" button is pressed
 
 
+
+///////////   IF EASY  BUTTON IS PRESSED   ///////
+
+easyButton = document.getElementById('easy')
+easyButton.onclick = function(){
+    timer.textContent = 'Good Luck!'
+}
+
+
+
+       
+    
+    click = document.getElementsByClassName('clickBoard')
+
+
+
+
+
+
+/////BELOW ADD TEXT FOR WHEN CLICKING HARD MODE, TO ADD A 25TH CARD THAT, WHEN CLICKED WILL DISPLAY A RIDDLE and you need to answer the riddle correctly to move on, timer will still be counting down///
+
+
+
+//add text here//
+
+
+
+//////////JOKER CARD ABOVE///
 
 
 

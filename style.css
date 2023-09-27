@@ -90,6 +90,7 @@ body{
     box-shadow: 0 5px 10px white;
     transform: translateX(-2px)
 }
+
 .grid-container{
     margin:30px;
     margin-top: 2em;
@@ -102,14 +103,63 @@ body{
     height: 50px;
     width: 50px
 }
-
-/*
-#getImagesButton{
-    background-color: thistle;
-    border: 4px solid rgb(198, 169, 198);
-    border-radius: 5px;
-    height: 110px;
-    width: 110px;
-    box-shadow: 0 5px 10px rgb(141, 100, 141);
+.reset{
+    padding: 15px 60px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: rgb(234, 189, 105);
+    border: none;
+    margin-bottom: 2em;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px grey;
 }
-*/
+.reset:focus{
+    color: white;
+    background: rgb(234, 189, 105);
+    box-shadow: inset 3px 3px 6px darkgoldenrod;
+}
+.playAgain{
+    padding: 15px 60px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: rgb(234, 189, 105);
+    border: none;
+    margin-bottom: 2em;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px grey;
+    background-color: #ffffffd5;
+    border-radius: 10px;
+}
+.playAgain:focus{
+    color: white;
+    background: rgb(234, 189, 105);
+    box-shadow: inset 3px 3px 6px darkgoldenrod;
+}
+.data{
+    padding-bottom: 2em;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.popup{
+    background: rgba(172, 56, 218, 0.623);
+    width: 420px;
+    padding: 90px 40px;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    font-family: sans-serif;
+    text-align: center;
+    z-index: 9999;
+    display: none;
+}
+
+p{
+    padding-bottom: 4em;
+    color: white;
+    font-size: 2em;
+}
