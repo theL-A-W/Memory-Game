@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css"/>
+    <link rel="stylesheet" href="style.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Martian+Mono:wght@800&display=swap" rel="stylesheet">
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
     <script defer src="script.js"></script>
 
     <title>Document</title>
@@ -18,33 +20,45 @@
     <button id="easy">Easy</button>
     <button id="hard">Hard</button>
 </div>
-<div id="timer">Timer</div>
+<div id="timer"></div>
 
     <div class="grid-container">
-        <div class="box" id="card1">Card 1</div>
-        <div class="box" id="card2">Card 2</div>
-        <div class="box" id="card3">Card 3</div>
-        <div class="box" id="card4">Card 4</div>
-        <div class="box" id="card5">Card 5</div>
-        <div class="box" id="card6">Card 6</div>
-        <div class="box" id="card7">Card 7</div>
-        <div class="box" id="card8">Card 8</div>
-        <div class="box" id="card9">Card 9</div>
-        <div class="box" id="card10">Card 10</div>
-        <div class="box" id="card11">Card 11</div>
-        <div class="box" id="card12">Card 12</div>
-        <div class="box" id="card13">Card 13</div>
-        <div class="box" id="card14">Card 14</div>
-        <div class="box" id="card15">Card 15</div>
-        <div class="box" id="card16">Card 16</div>
-        <div class="box" id="card17">Card 17</div>
-        <div class="box" id="card18">Card 18</div>
-        <div class="box" id="card19">Card 19</div>
-        <div class="box" id="card20">Card 20</div>
-        <div class="box" id="card21">Card 21</div>
-        <div class="box" id="card22">Card 22</div>
-        <div class="box" id="card23">Card 23</div>
-        <div class="box" id="card24">Card 24</div>
+
+        <button onclick="flipCard(0)" class="card" id="card1"></button>
+        <button onclick="flipCard(1)" class="card" id="card2"></button>
+        <button onclick="flipCard(2)" class="card" id="card3"></button>
+        <button onclick="flipCard(3)" class="card" id="card4"></button>
+        <button onclick="flipCard(4)" class="card" id="card5"></button>
+        <button onclick="flipCard(5)" class="card" id="card6"></button>
+        <button onclick="flipCard(6)" class="card" id="card7"></button>
+        <button onclick="flipCard(7)" class="card" id="card8"></button>
+        <button onclick="flipCard(8)" class="card" id="card9"></button>
+        <button onclick="flipCard(9)" class="card" id="card10"></button>
+        <button onclick="flipCard(10)" class="card" id="card11"></button>
+        <button onclick="flipCard(11)" class="card" id="card12"></button>
+        <button onclick="flipCard(12)" class="card" id="card13"></button>
+        <button onclick="flipCard(13)" class="card" id="card14"></button>
+        <button onclick="flipCard(14)" class="card" id="card15"></button>
+        <button onclick="flipCard(15)" class="card" id="card16"></button>
+        <button onclick="flipCard(16)" class="card" id="card17"></button>
+        <button onclick="flipCard(17)" class="card" id="card18"></button>
+        <button onclick="flipCard(18)" class="card" id="card19"></button>
+        <button onclick="flipCard(19)" class="card" id="card20"></button>
+        <button onclick="flipCard(20)" class="card" id="card21"></button>
+        <button onclick="flipCard(21)" class="card" id="card22"></button>
+        <button onclick="flipCard(22)" class="card" id="card23"></button>
+        <button onclick="flipCard(23)" class="card" id="card24"></button>
+    </div>
+        <div class="data" >
+            <div class="score">Score: <span class="scoreBoard">0</span> </div>
+            <div class="click">Clicks: <span class="clickBoard">0</span> </div>
+        </div>
+        <div class="grid" >
+        <div class="popup">
+            <button class = "playAgain"> Play Again</button>
+        </div>
+        </div>
+    
 
 </body>
 </html>
