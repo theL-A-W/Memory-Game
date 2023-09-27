@@ -56,34 +56,57 @@
         `https://media.istockphoto.com/id/162136091/photo/kangaroo-posing-very-much-like-a-human.webp?b=1&s=170667a&w=0&k=20&c=UXGdXCFcNXlWhHppK6gxNvZC6oPehfrUn4CZrpUyywg=`,
         `https://media.istockphoto.com/id/162136091/photo/kangaroo-posing-very-much-like-a-human.webp?b=1&s=170667a&w=0&k=20&c=UXGdXCFcNXlWhHppK6gxNvZC6oPehfrUn4CZrpUyywg=`
     ]
-    const cards = document.querySelectorAll('.card')
+const cards = document.querySelectorAll('.card')
 let isFlipped = Array(cards.length).fill(false)
 let firstCard, secondCard
 let lockBoard = false
+let hasFlippedCard = false
 
-function match(){
-    const  firstCardURL = imageArray[firstCard]
-    const secondCardURL = imageArray[secondCard]
 
-    if (firstCardURL === secondCardURL)
-    firstCard = null
-    secondCard = null
-}
+
 
 function flipCard(index) {
   if (lockBoard) return
-  if (isFlipped[index]) return
+  if (index === firstCard) return
 
   cards[index].style.backgroundImage = `url(${imageArray[index]})`
   isFlipped[index] = true
 
-  if (!firstCard) {
+  if (!hasFlippedCard) {
+    hasFlippedCard = true
     firstCard = index
     return
   }
+  secondCard = index
+  lockBoard = true
+  match()
+}
+
+  function match(){
+    const  firstCardURL = imageArray[firstCard]
+    const secondCardURL = imageArray[secondCard]
+
+    if (firstCardURL === secondCardURL){
+        resetCards()
+} else {
+    setTimeout(() => {
+        cards[firstCard].style.backgroundImage = 'url("")'
+        cards[secondCard].style.backgroundImage = 'url("")'
+        isFlipped[firstCard] = false
+        isFlipped[secondCard] = false
+        resetCards()
+    }, 1000)
+}
+function resetCards(){
+    hasFlippedCard = false
+    lockBoard = false
+    firstCard = null
+    secondCard = null
+}
 
   secondCard = index
-  checkForMatch()
+  lockBoard = true
+  match()
 }
 
 
@@ -184,124 +207,3 @@ function flipCard(index) {
 
 
 
-
-
-
-    
-// //shuffles the array so the images are in a different order each time, ie. on different cards
-//     function shuffleArray(array)  {
-//         for  (let i = array.length - 1; i > 0; i--) {
-//             const j = Math.floor(Math.random() * (i + 1))
-//             const temp  = array[i]
-//             array[i] = array[j]
-//             array[j]= temp
-
-//         }
-//     }
-//     shuffleArray(imageArray)
-
-//     let flippedCards  =  []
-//     let cardLocked  = false
-//     let score  =  0
-//     let clicks =  0
-
-
-
-// // puts images on cards
-// for (let i = 0; i < imageArray.length; i++) {
-//     const cardClass = "card" + (i +1)
-//     const card= document.getElementById(cardClass)
-//     card.style.backgroundImage = `url(${imageArray[i]})`
-//     card.style.backgroundRepeat = "no-repeat"
-//     card.style.backgroundSize = "cover"
-// }
-
-
-
-
-
-
-// const carrds = document.querySelectorAll('.card')
-//     card.forEach((card, index) => {
-//         card.addEventListener('click', () => {
-//             if (cardLocked) return
-          
-
-//             if (flippedCards.includes(card) || card.style.backgroundImage !== 'none') return
-           
-//             card.style.backgroundImage = `url(${imageArray[index]})`
-//                 flippedCards.push(card)
-
-//                 clicks += 1
-//                 document.querySelector('.clickBoard').textContent = clicks
-
-//             if (flippedCards.length === 2) {
-//                 cardLocked = true
-
-//             if  (flippedCards[0].style.backgroundImage === flippedCards[1].style.backgroundImage){
-//                     flippedCards = []
-//                     cardLocked  = false
-//                     score +=1
-//                     document.querySelector('.scoreBoard').textContent = score
-//             } else{
-//                 setTimeout(() => {
-//                     flippedCards.forEach(card => {
-//                         card.style.backgroundImage = ''
-//                 })
-//                     flippedCards =  []
-//                     cardLocked  =  false
-//                 }, 1000)
-//             }
-//         }
-//     })
-
-
-
-
-
-
-
-
-//     let intervalId
-
-// //Timer functionality
-//     function startTimer(duration, display) {
-//         let timer = duration, minutes, seconds
-//         setInterval(function () {
-//             minutes = parseInt(timer/60,  10)
-//             seconds = parseInt(timer % 60, 10)
-
-//             minutes = minutes < 10 ? "0" + minutes : minutes
-//             seconds = seconds < 10 ? "0"  + seconds : seconds
-
-// //displaying how the time will be shown
-//             display.textContent = minutes +  ":" + seconds
-
-// // itinializing a stop of the timer once it reaches 0
-//     if (timer <= 0) {
-//         clearInterval(intervalId)
-//         }
-//         if (--timer < 0) {
-//             timer = 0
-//         }
-
-//         }, 1000)
-//     }
-
-//     function stopTimer () {
-//         clearInterval(intervalId)
-//     }
-// //this starts a 1 minute(60 seconds) timer when the window loads aka when you press refresh
-// //hardButton = document.getElementById('hard')
-// //hard.onload = function (){...
-// // ^^ above 2 lines start the timer when "hard button is pressed, but the seconds don't count down properly"
-//         window.onload = function () {
-//             // const twoMinutes = 120, 
-//             const oneMinute = 60,
-//             display = document.getElementById('timer')
-//             startTimer(oneMinute, display)
-//         }
-
-//     })
-// })
-// ^^ I want to add an "if" statement to this to start the timer only when the "hard" button is pressed
