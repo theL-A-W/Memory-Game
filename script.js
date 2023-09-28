@@ -90,6 +90,7 @@ function flipCard(index) {
     firstCard = index
     return
   }
+  
   secondCard = index
   lockBoard = true
   match()
@@ -99,10 +100,12 @@ function flipCard(index) {
     const  firstCardURL = imageArray[firstCard]
     const secondCardURL = imageArray[secondCard]
 
+
+
     if (firstCardURL === secondCardURL){
         matchedCount += 2
         resetCards()
-//////  TO DISPLAY POP-UP   ///////
+// TO DISPLAY POP-UP number of matches is equal to the length of the  array ///////
     if (matchedCount === imageArray.length) {
     winningPopup()
     
@@ -160,10 +163,12 @@ function flipCard(index) {
             display.textContent = minutes +  ":" + seconds
             
 // itinializing a stop of the timer once it reaches 0
-
+if (timer <= 0 && matchedCount < imageArray.length){
+    losingPopup()
+}
     if (timer <= 0) {
         clearInterval(intervalId)
-        losingPopup()
+        
         }
         if (--timer < 0) {
             timer = 0
@@ -177,14 +182,13 @@ function flipCard(index) {
         
     }
 
+   
 
-
-    //////     IF HARD BUTTON IS PRESSED     //////////////
-//this starts a 1 minute(60 seconds) timer when the window loads aka when you press refresh
+//this starts a 1:00 minute timer when the "hard" button is pressed
     hardButton = document.getElementById('hard')
     hardButton.onclick = function (){
     resetGame()
-    const twoMinutes = 10, 
+    const twoMinutes = 60, 
     display = document.getElementById('timer')
     startTimer(twoMinutes, display)
 }
@@ -195,41 +199,9 @@ function flipCard(index) {
             isFlipped[i] = false
         }
     }
-////BELOW WILL LOAD TIMER WHEN THE WINDOW LOADS
-//         window.onload = function () {
-//             const twoMinutes = 120, 
-//             display = document.getElementById('timer')
-//             startTimer(twoMinutes, display)
-//         }
 
-// // ^^ I want to add an "if" statement to this to start the timer only when the "hard" button is pressed
-
-
-
-///////////   IF EASY  BUTTON IS PRESSED   ///////
-
+//   IF EASY  BUTTON IS PRESSED, "good luck" will appear in the timer
 easyButton = document.getElementById('easy')
 easyButton.onclick = function(){
     timer.textContent = 'Good Luck!'
 }
-
-
-
-       
-    
-
-
-
-
-
-/////BELOW ADD TEXT FOR WHEN CLICKING HARD MODE, TO ADD A 25TH CARD THAT, WHEN CLICKED WILL DISPLAY A RIDDLE and you need to answer the riddle correctly to move on, timer will still be counting down///
-
-
-
-//add text here//
-
-
-
-//////////JOKER CARD ABOVE///
-
-

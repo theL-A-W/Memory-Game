@@ -23,7 +23,10 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+p{
+    padding-bottom: 2em;
+    font-size: 2em;
+}
 #easy{
     color:rgb(185, 161, 130);
     height: 40px;
@@ -140,17 +143,16 @@ body{
     box-shadow: inset 3px 3px 6px darkgoldenrod;
 }
 .dadJoke{
-    padding: 15px 60px;
-    display: flex;
-    align-items: center;
-    background-color: white;
+    display:flow-root;
+    justify-self: center;
+    padding: 15px 5px;
     color: rgb(247, 205, 127);
-    border: none;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     cursor: pointer;
-    box-shadow: 2px 2px 3px grey;
+    box-shadow: 0px 8px 12px #510e5b;
     background-color: #801f8fcb;
-    border: 4px solid white;
+    border: 4px solid #801f8fcb;
+    width: 60%
 }
 
 
@@ -161,6 +163,8 @@ display: flexbox;
 }
 .dadJoke p{
     font-size: 20px;
+    display: flex;
+    text-align: left;
     }
 
 .data{
@@ -184,10 +188,7 @@ display: flexbox;
     display: none;
 }
 
-p{
-    padding-bottom: 2em;
-    font-size: 2em;
-}
+
 /*https://media.tenor.com/pkqQze73yOoAAAAM/confetti-sticker.gif*/
 #winningPopup{
     background-image: url("https://media.tenor.com/jHLmMpzuA84AAAAj/nemzeti%C3%BCnnep-explode.gif");
@@ -195,7 +196,7 @@ p{
     background-size: cover;
     background-blend-mode: overlay;
     color: white;
-    height: 320px;
+    height: 350px;
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
