@@ -1,50 +1,34 @@
+
 //Dad jokes API//
 
-// import axios from 'axios';
+const jokeButton = document.querySelector('.dadJoke')
 
-// const options = {
-//   method: 'GET',
-//   url: 'https://dad-jokes.p.rapidapi.com/random/joke',
-//   headers: {
-//     'X-RapidAPI-Key': 'f8eea0648bmsha3f222c98002e5fp135fd1jsn6fe6f44e3a56',
-//     'X-RapidAPI-Host': 'dad-jokes.p.rapidapi.com'
-//   }
-// };
+jokeButton.addEventListener('click', getJoke)
 
-// try {
-// 	const response = await axios.request(options);
-// 	console.log(response.data);
-// } catch (error) {
-// 	console.error(error);
-// }
+async function displayJoke(setup, punchline){
+  jokeButton.innerHTML = `<h5><strong>Joke: </strong></h5><p>${setup}</p><h5><strong>Punchline: </strong></h5><p>${punchline}</p>`
 
+}
+async function getJoke(){
+    try {
+        const options = {
+            method: 'GET',
+            url: 'https://official-joke-api.appspot.com/random_joke'
+          }
+        const response = await axios.request(options);
+        const {  setup, punchline } = response.data
+        console.log('Joke: ', response.data.setup)
+        console.log('Punchline: ', response.data.punchline)
+        await displayJoke(setup, punchline)
+        } catch (error) {
+            console.error(error)
+        }
+      
+          
 
+    }              
 
-// // const imageToDisplay = document.querySelector('#imageToDisplay')
-// const button = document.querySelector('#getImagesButton')
-
-
-// axios.get('https://api.unsplash.com/search/photos?query=animals&client_id=FRXSsWanrUHj9B2wvq288OTm2XYEMDHPUuHIuN1mkQI')
-
-// .then(response => {
-//     console.log(response)
-// })
-
-
-// button.addEventListener('click', async () => {
-
-// let imageToDisplay = response.data.results[0].links.download
-// let img1 = document.createElement('img')
-// img1.setAttribute('class', 'imageToDisplay')
-// img1.textContent  = 'First Image:' + imageToDisplay
-// document.body.append(img1)
-// }
-// )
-// //////////
-// const img = $('#card1')
-// const imageToDisplay = document.querySelector('.imageToDisplay')
-// imageToDisplay.style.backgroundImage = `url(${img.src})`
-// ////////
+     
 
 
 
@@ -200,7 +184,7 @@ function flipCard(index) {
     hardButton = document.getElementById('hard')
     hardButton.onclick = function (){
     resetGame()
-    const twoMinutes = 20, 
+    const twoMinutes = 10, 
     display = document.getElementById('timer')
     startTimer(twoMinutes, display)
 }
@@ -233,8 +217,6 @@ easyButton.onclick = function(){
 
        
     
-    click = document.getElementsByClassName('clickBoard')
-
 
 
 
@@ -249,27 +231,5 @@ easyButton.onclick = function(){
 
 
 //////////JOKER CARD ABOVE///
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

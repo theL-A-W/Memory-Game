@@ -139,6 +139,30 @@ body{
     background: rgb(234, 189, 105);
     box-shadow: inset 3px 3px 6px darkgoldenrod;
 }
+.dadJoke{
+    padding: 15px 60px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: rgb(247, 205, 127);
+    border: none;
+    margin-bottom: 2em;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px grey;
+    background-color: #801f8fcb;
+    border: 4px solid white;
+}
+
+
+.dadJoke h5{
+text-decoration: underline;
+font-size: 25px;
+display: flexbox;
+}
+.dadJoke p{
+    font-size: 20px;
+    }
+
 .data{
     padding-bottom: 2em;
     display: flex;
@@ -171,7 +195,7 @@ p{
     background-size: cover;
     background-blend-mode: overlay;
     color: white;
-    height: 300px;
+    height: 320px;
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -201,7 +225,17 @@ p{
         opacity: 1;
     }
 }
-@media (max-width: 1150px) {
+
+@media (min-width:1023px) {
+    h1{
+        font-size: 70px;
+    }
+    #timer{
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 1023px) {
     h1{
         font-size: 110px;
         margin-bottom: 30px;
