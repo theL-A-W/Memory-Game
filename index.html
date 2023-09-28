@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Martian+Mono:wght@800&display=swap" rel="stylesheet">
-<script  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
     <script defer src="script.js"></script>
 
     <title>Document</title>
@@ -54,8 +54,14 @@
             <div class="click">Clicks: <span class="clickBoard">0</span> </div>
         </div>
         <div class="grid" ></div>
-            <div class="popup">
+            <div class="popup" id="winningPopup">
+                <h4>Congratulations! You won!</h4>
                 <p>Thanks for playing!</p>
+                <button class = "playAgain" id="playAgainPopup" onclick="window.location.reload()"> Play Again</button>
+            </div>
+            <div class="popup" id="losingPopup">
+                <h4>You lost...</h4>
+                <p>Better Luck Next Time!</p>
                 <button class = "playAgain" id="playAgainPopup" onclick="window.location.reload()"> Play Again</button>
             </div>
             <button class = "reset" onclick="window.location.reload()"> Reset</button>

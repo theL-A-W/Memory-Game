@@ -1,3 +1,23 @@
+//Dad jokes API//
+
+// import axios from 'axios';
+
+// const options = {
+//   method: 'GET',
+//   url: 'https://dad-jokes.p.rapidapi.com/random/joke',
+//   headers: {
+//     'X-RapidAPI-Key': 'f8eea0648bmsha3f222c98002e5fp135fd1jsn6fe6f44e3a56',
+//     'X-RapidAPI-Host': 'dad-jokes.p.rapidapi.com'
+//   }
+// };
+
+// try {
+// 	const response = await axios.request(options);
+// 	console.log(response.data);
+// } catch (error) {
+// 	console.error(error);
+// }
+
 
 
 // // const imageToDisplay = document.querySelector('#imageToDisplay')
@@ -63,10 +83,14 @@ let lockBoard = false
 let hasFlippedCard = false
 
 
-
-function displayPopup() {
-    const popup =  document.querySelector('.popup')
-    popup.style.display = 'block'
+//To display the popups
+function winningPopup() {
+    const winningPopup =  document.querySelector('#winningPopup')
+    winningPopup.style.display = 'block'
+}
+function losingPopup() {
+    const losingPopup =  document.querySelector('#losingPopup')
+    losingPopup.style.display = 'block'
 }
 
 
@@ -96,7 +120,7 @@ function flipCard(index) {
         resetCards()
 //////  TO DISPLAY POP-UP   ///////
     if (matchedCount === imageArray.length) {
-    displayPopup()
+    winningPopup()
     
     }
     } else {
@@ -141,7 +165,7 @@ function flipCard(index) {
 //Timer functionality
     function startTimer(duration, display) {
         let timer = duration, minutes, seconds
-        setInterval(function () {
+        const intervalId = setInterval(function () {
             minutes = parseInt(timer/60,  10)
             seconds = parseInt(timer % 60, 10)
 
@@ -152,8 +176,10 @@ function flipCard(index) {
             display.textContent = minutes +  ":" + seconds
             
 // itinializing a stop of the timer once it reaches 0
+
     if (timer <= 0) {
         clearInterval(intervalId)
+        losingPopup()
         }
         if (--timer < 0) {
             timer = 0
@@ -164,6 +190,7 @@ function flipCard(index) {
 
     function stopTimer () {
         clearInterval(intervalId)
+        
     }
 
 

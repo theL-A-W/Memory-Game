@@ -16,6 +16,10 @@ h1{
     box-shadow: 0 5px 5px thistle;
     border-radius: 10px;
 }
+h4{
+    color: white;
+    font-size: 20px;
+}
 body{
     background-color:rgb(234, 189, 105);
     background-repeat: no-repeat;
