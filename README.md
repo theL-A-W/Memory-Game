@@ -3,7 +3,8 @@ Create a memory game using a joke API
 
 ###  Deployed Game:
 https://memorygamebylindsay.surge.sh/
-
+## Wireframe
+https://drive.google.com/drive/recent
 
 ### How it works:
 The gameboard consists of 24 cards
