@@ -1,6 +1,4 @@
 
-//Dad jokes API//
-
 const jokeButton = document.querySelector('.dadJoke')
 let matchedCount = 0
 
@@ -31,7 +29,7 @@ const imageArray = [
     `https://media.istockphoto.com/id/162136091/photo/kangaroo-posing-very-much-like-a-human.webp?b=1&s=170667a&w=0&k=20&c=UXGdXCFcNXlWhHppK6gxNvZC6oPehfrUn4CZrpUyywg=`,
     `https://media.istockphoto.com/id/162136091/photo/kangaroo-posing-very-much-like-a-human.webp?b=1&s=170667a&w=0&k=20&c=UXGdXCFcNXlWhHppK6gxNvZC6oPehfrUn4CZrpUyywg=`
 ]
-
+//Dad jokes API
 async function getJoke(){
     try {
         const options = {
@@ -49,7 +47,8 @@ async function getJoke(){
       
           
 
-    }              
+    }           
+    //Displaying joke and punchline   
     async function displayJoke(setup, punchline){
         jokeButton.innerHTML = `<h5><strong>Joke: </strong></h5><p>${setup}</p><h5><strong>Punchline: </strong></h5><p>${punchline}</p>`
       
@@ -103,7 +102,7 @@ function flipCard(index) {
         matchedCount += 2
         resetCards()
 
-// TO DISPLAY POP-UP number of matches is equal to the length of the  array ///////
+// To display pop-up: number of matches is equal to the length of the  array
     if (matchedCount === imageArray.length) {
     winningPopup()
     
@@ -153,10 +152,10 @@ function flipCard(index) {
             minutes = minutes < 10 ? "0" + minutes : minutes
             seconds = seconds < 10 ? "0"  + seconds : seconds
 
-//displaying how the time will be shown
+//Displaying how the time will be shown
             display.textContent = minutes +  ":" + seconds
             
-// itinializing a stop of the timer once it reaches 0
+// Itinializing a stop of the timer once it reaches 0
 if (timer <= 0 && matchedCount < imageArray.length){
     losingPopup()
 }
@@ -177,7 +176,7 @@ if (timer <= 0 && matchedCount < imageArray.length){
     }
 
 
-//this starts a 1:00 minute timer when the "hard" button is pressed
+//This starts a 1:00 minute timer when the "hard" button is pressed
     hardButton = document.getElementById('hard')
     hardButton.onclick = function (){
     resetGame()
@@ -193,7 +192,7 @@ if (timer <= 0 && matchedCount < imageArray.length){
         }
     }
 
-//   IF EASY  BUTTON IS PRESSED, "good luck" will appear in the timer
+// If easy button is pressed, "good luck" will appear in the timer display
 easyButton = document.getElementById('easy')
 easyButton.onclick = function(){
     timer.textContent = 'Good Luck!'
