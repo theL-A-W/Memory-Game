@@ -154,8 +154,6 @@ p{
     border: 4px solid #801f8fcb;
     width: 60%
 }
-
-
 .dadJoke h5{
 text-decoration: underline;
 font-size: 25px;
@@ -187,9 +185,6 @@ display: flexbox;
     z-index: 9999;
     display: none;
 }
-
-
-/*https://media.tenor.com/pkqQze73yOoAAAAM/confetti-sticker.gif*/
 #winningPopup{
     background-image: url("https://media.tenor.com/jHLmMpzuA84AAAAj/nemzeti%C3%BCnnep-explode.gif");
     background-repeat: no-repeat;
@@ -201,7 +196,6 @@ display: flexbox;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
-
 #losingPopup{
     background-color: rgba(68, 0, 255, 0.725);
     color: white;
