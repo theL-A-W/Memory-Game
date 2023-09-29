@@ -1,11 +1,11 @@
-#[Memory-Game](https://memorygamebylindsay.surge.sh/)
+[Memory-Game](https://memorygamebylindsay.surge.sh/)
 Create a memory game using a joke API
 
-###Deployed Game:
+Deployed Game:
 https://memorygamebylindsay.surge.sh/
 
 
-###How it works:
+How it works:
 The gameboard consists of 24 cards
 The deck of 24 cards begins image-side down.
 -  Choose between easy and hard mode by clicking the associated button. The game is set to default to easy mode.
@@ -15,13 +15,13 @@ The deck of 24 cards begins image-side down.
 - The game ends when all cards are matched or the timer runs out.
 - Win the game, and claim your prize at the end(hint: your prize is a joke)
 
-![memoryGameImage](memoryscreenshot.png)
-###Languages used:
+![Memory Game Image](memoryscreenshot.png)
+Languages used:
 - HTML
 - CSS
 - Javascript
 
-###Future game features:
+Future game features:
 - "Hard" mode update, including: the addition of a 25th card to the deck as a joker card that, when clicked on will remove 20s econds from the timer.
 - Audio for every card click
 - A hint option for easy mode. After you click the first card, if you wait longer than 5 seconds before choosing the partner card it will wiggle(move up by 2px repeatedly).
